@@ -8,17 +8,33 @@ function imprimirSumaNumeros() {
     // Imprime la suma de los números del 1 al 10
     // Pista: usa un acumulador
     // Tu código:
-    var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    var suma = numeros.reduce(function (acc, elemento) {
-      return acc + elemento;
-    }, 0);
-    return suma;
+    var acumulador = 0;      //NO CREO NINGUN ARREGLO
+    for (let i = 1; i <= 10; i++) {
+      acumulador += i;
+    } return acumulador
+
+    // var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];  // CREO EL ARREGLO
+    // var suma = numeros.reduce(function (acc, elemento) {
+    //   return acc + elemento;
+    // }, 0);
+    // return suma;
 }
 
 function encuentraPares(array){
   // Devuelve un arreglo con los pares encontrados
   // en el arreglo de enteros pasado como parámetro
   // Tu código:
+  
+  //con WHILE
+  // var resultado = [];
+  // var indice = 0;
+  // while (indice < array.length) {
+    // if (array[indice] % 2 === 0) {
+      //resultado.push(array[indice]);
+    //}
+    //indice++;
+  //}
+  //return resultado;
   var nuevoArreglo = [];
   for (let i = 0; i < array.length; i++) {
     if (array[i] % 2 === 0) {
@@ -31,11 +47,21 @@ function elevaAlCuadrado(array){
   // Devuelve un arreglo con cada número del array
   // elevado al cuadrado
   // Tu código:
-  var elevadosAlCuadrado = [];
-  array.forEach(function (elemento) {
-    elevadosAlCuadrado.push(Math.pow(elemento, 2))
-  });
-  return elevadosAlCuadrado;
+// var resultado = array.map(function (num) { RECIBE UN NUMERO
+//   return num ** 2 ooooo math.pow(num, 2)
+//});
+//} return resultado;
+//
+//   var elevadosAlCuadrado = [];
+//   array.forEach(function (elemento) {
+//     elevadosAlCuadrado.push(Math.pow(elemento, 2))
+//   });
+//   return elevadosAlCuadrado;
+// }
+var resultado = array.map(function (num) {
+  return Math.pow(num, 2)
+});
+return resultado;
 }
 
 function sumaArray(array){
@@ -51,8 +77,10 @@ function sumaArray(array){
 function numeroDigitos(num){
   // Devuelve el número de dígitos de un número dado
   // Tu código:
-  var digitos = num.toString();
-  return digitos.length;
+  // var digitos = num.toString();
+  // return digitos.length;
+  var digitos = num + "";
+  return digitos.length
 }
   
   
