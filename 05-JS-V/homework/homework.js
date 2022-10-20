@@ -12,7 +12,7 @@ function crearUsuario() {
   // FUNCION CONSTRUCTORA
 
   // function Usuario (opciones){
-  //   this.usuario = opciones.usuario;
+  //   this.usuario = opciones.usuario; o tambien puede ser opciones["usuario"] (las comillas dentro de bracket es = al dot notation)
   //   this.nombre = opciones.nombre;
   //   this.email = opciones.email;
   //   this.password = opciones.password;
@@ -83,16 +83,17 @@ class Persona {
     this.apellido = apellido;
     this.edad = edad;
     this.dir = dir;
-    }
   }
-  Persona.prototype.detalle = function (){
+
+  get detalle() {  //el GET hace que lo agregue al prototype y no a la clase directamente.
     return {
-    Nombre: this.nombre,
-    Apellido: this.apellido,
-    Edad: this.edad,
-    Direccion: this.dir
-    }
-  }
+      Nombre: this.nombre,
+      Apellido: this.apellido,
+      Edad: this.edad,
+      Direccion: this.dir
+    };
+  };
+}
 
 
 function crearInstanciaPersona(nombre, apellido, edad, dir) {
@@ -106,7 +107,7 @@ function crearInstanciaPersona(nombre, apellido, edad, dir) {
 function agregarMetodo() {
   //La función agrega un método "datos" a la clase Persona que toma el nombre y la edad de la persona y devuelve: 
   //Ej: "Juan, 22 años"
-  Persona.prototype.datos = function(){
+  Persona.prototype.datos = function () {
     return this.nombre + ", " + this.edad + " años";
   }
 }
